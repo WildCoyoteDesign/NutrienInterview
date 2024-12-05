@@ -7,7 +7,7 @@ app.listen(4000, () => {
   console.log(`server running on port 4000`);
 });
 
-app.get("/Attribute", (req, res) => {
+app.get("/Attribute", (_req, res) => {
   getCountFromColumn('attribute', (ret: ColumnCount[]) => {
     const counts = new Map<string, number>();
     ret.forEach((columnCount) => {
@@ -37,7 +37,7 @@ app.get("/Attribute/:value", (req, res) => {
   });
 });
 
-app.get("/Commodity", (req, res) => {
+app.get("/Commodity", (_req, res) => {
   getCountFromColumn('commodity', (ret: ColumnCount[]) => {
     const counts = new Map<string, number>();
     ret.forEach((columnCount) => {
@@ -67,7 +67,7 @@ app.get("/Commodity/:value", (req, res) => {
   });
 });
 
-app.get("/CommodityType", (req, res) => {
+app.get("/CommodityType", (_req, res) => {
   getCountFromColumn('commoditytype', (ret: ColumnCount[]) => {
     const counts = new Map<string, number>();
     ret.forEach((columnCount) => {
@@ -97,7 +97,7 @@ app.get("/CommodityType/:value", (req, res) => {
   });
 });
 
-app.get("/Units", (req, res) => {
+app.get("/Units", (_req, res) => {
   getCountFromColumn('units', (ret: ColumnCount[]) => {
     const counts = new Map<string, number>();
     ret.forEach((columnCount) => {
@@ -127,7 +127,7 @@ app.get("/Units/:value", (req, res) => {
   });
 });
 
-app.get("/YearType", (req, res) => {
+app.get("/YearType", (_req, res) => {
   getCountFromColumn('yeartype', (ret: ColumnCount[]) => {
     const counts = new Map<string, number>();
     ret.forEach((columnCount) => {
@@ -157,7 +157,7 @@ app.get("/YearType/:value", (req, res) => {
   });
 });
 
-app.get("/Year", (req, res) => {
+app.get("/Year", (_req, res) => {
   getCountFromColumn('year', (ret: ColumnCount[]) => {
     const counts = new Map<string, number>();
     ret.forEach((columnCount) => {
@@ -191,5 +191,6 @@ function setup() {
   initDB();
 }
 
-// Call myFunction after 2 seconds (2000 milliseconds)
+// Call setup after 7 seconds (7000 milliseconds)
+// Allows time for DB initialization to complete.
 setTimeout(setup, 7000);

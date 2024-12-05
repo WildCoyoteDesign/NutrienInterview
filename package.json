@@ -2,6 +2,18 @@
   "dependencies": {
     "@types/papaparse": "^5.3.15",
     "express": "^4.21.1",
+    "mysql2": "^3.11.5",
     "papaparse": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "start": "NODE_PATH=./build node build/index.js",
+    "build": "tsc -p .",
+    "dev": "nodemon src/index.ts"
   }
 }
